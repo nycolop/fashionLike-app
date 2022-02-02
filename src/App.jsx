@@ -1,4 +1,3 @@
-import 'App.css'
 import { loginWithFacebook, loginWithGoogle } from 'Auth/client'
 
 export function App () {
