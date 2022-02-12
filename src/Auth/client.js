@@ -12,7 +12,7 @@ const firebaseConfig = {
   measurementId: 'G-QTHM39S66N'
 }
 
-!firebase.app.length && firebase.initializeApp(firebaseConfig)
+!firebase.apps.length && firebase.initializeApp(firebaseConfig)
 
 export const onAuthStateChanged = (callback) => {
   return firebase.auth().onAuthStateChanged(callback)
