@@ -1,4 +1,5 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik'
+import Error from './VerifyComponents'
 const REGEX_MAIL = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
 
 export default function Register () {
@@ -29,26 +30,26 @@ export default function Register () {
       }}
     >
       {({ isSubmitting }) => (
-        <Form>
-          <Field type="text" name="name" />
-          <ErrorMessage name="name" component="div" />
+        <Form className='w-11/12 flex flex-col items-center justify-center'>
+          <Field className='w-full border border-black px-3 pt-1 pb-2.5 rounded-xl my-3.5' type="text" name="name" placeholder='Nombre' />
+          <ErrorMessage name="name" component={Error} />
 
-          <Field type="text" name="surname" />
-          <ErrorMessage name="surname" component="div" />
+          <Field className='w-full border border-black px-3 pt-1 pb-2.5 rounded-xl my-3.5' type="text" name="surname" placeholder='Apellido' />
+          <ErrorMessage name="surname" component={Error} />
 
-          <Field type="email" name="email" />
-          <ErrorMessage name="email" component="div" />
+          <Field className='w-full border border-black px-3 pt-1 pb-2.5 rounded-xl my-3.5' type="date" name="birthDate" placeholder='Fecha de Nacimiento' />
+          <ErrorMessage name="birthDate" component={Error} />
 
-          <Field type="password" name="password" />
-          <ErrorMessage name="password" component="div" />
+          <Field className='w-full border border-black px-3 pt-1 pb-2.5 rounded-xl my-3.5' type="email" name="email" placeholder='Email' />
+          <ErrorMessage name="email" component={Error} />
 
-          <Field type="password" name="verifyPassword" />
-          <ErrorMessage name="verifyPassword" component="div" />
+          <Field className='w-full border border-black px-3 pt-1 pb-2.5 rounded-xl my-3.5' type="password" name="password" placeholder='Contraseña' />
+          <ErrorMessage name="password" component={Error} />
 
-          <Field type="date" name="birthDate" />
-          <ErrorMessage name="birthDate" component="div" />
+          <Field className='w-full border border-black px-3 pt-1 pb-2.5 rounded-xl my-3.5' type="password" name="verifyPassword" placeholder='Confirmar contraseña' />
+          <ErrorMessage name="verifyPassword" component={Error} />
 
-          <button type="submit" disabled={isSubmitting}>
+          <button className='my-3 bg-[#E063A3] opacity-40 text-white uppercase font-semibold w-full py-3 rounded-xl' type="submit" disabled={isSubmitting}>
             Registrarme
           </button>
         </Form>
